@@ -1,4 +1,7 @@
-
+<%= render 'layouts/navigation' %>
+<% if logged_in?%>
+    <h1>You are Logged In, <%= current_user.id %></h1>
+<%end%>
 <p>
   <strong>Name:</strong>
   <%= @profile.name %>
@@ -19,5 +22,5 @@
   <%= @profile.interests %>
 </p>
 
-<%= link_to 'Back', profiles_path %>
+<%= link_to 'All Profiles', profiles_path %>
 

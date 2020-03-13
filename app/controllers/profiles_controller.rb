@@ -12,17 +12,35 @@ class ProfilesController < ApplicationController
   end
  
   def edit
-    @profile = Profile.find(params[:id])
+    if logged_in?
+      @profile = Profile.find(params[:id])
+      if current_user.id != @profile.user_id
+        redirect_to '/noaccess'
+      end
+    else
+      redirect_to :controller => 'sessions', :action => 'new'
+    end
   end
  
   def create
-    @profile = Profile.new(profile_params)
+   ## @profile = Profile.new(profile_params)
  
-    if @profile.save
-      redirect_to @profile
-    else
-      render 'new'
-    end
+    ## user = User.find(profile_params[:user_id])
+    ## @profile.build_user(:id  => user.id)   
+    
+   ## if @profile.save
+     ## redirect_to @profile
+   ## else
+     ### render 'new'
+   ## end
+     @profile = Profile.new(profile_params)
+     @profile.user_id = current_user.id
+ 
+  if @profile.save
+    redirect_to @profile
+  else
+    render 'new'
+  end
   end
  
   def update
@@ -40,6 +58,10 @@ class ProfilesController < ApplicationController
     @profile.destroy
  
     redirect_to profiles_path
+  end
+  
+  def access
+    render 'access'
   end
  
   private
