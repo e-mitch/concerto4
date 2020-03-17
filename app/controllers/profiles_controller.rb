@@ -11,6 +11,19 @@ class ProfilesController < ApplicationController
     @profile = Profile.new
   end
  
+  def view
+    current_profile = nil
+    profiles = Profile.all
+    x = 0
+    while x < profiles.length
+      if profiles[x].user_id == current_user.id
+        current_profile = profiles[x]
+      end
+      x += 1
+    end
+    @profile = current_profile
+  end
+  
   def edit
     if logged_in?
       @profile = Profile.find(params[:id])
@@ -38,6 +51,7 @@ class ProfilesController < ApplicationController
  
   if @profile.save
     redirect_to @profile
+    current_user.save
   else
     render 'new'
   end

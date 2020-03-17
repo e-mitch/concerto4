@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   get 'welcome', to: 'sessions#welcome'
   get 'logout', to: 'sessions#logout'
   get 'noaccess', to: 'profiles#access'
+  get 'myprofile', to: 'profiles#view'
 end
