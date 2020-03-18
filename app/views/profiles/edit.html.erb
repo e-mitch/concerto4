@@ -1,10 +1,11 @@
 <%= render 'layouts/navigation' %>
+<div class="body">
+ 
 <h1>Edit Profile</h1>
 <% if logged_in?%>
   <%if current_user.id == @profile.user_id %>
-      <h1>You are Logged In, <%= current_user.id %></h1>
-      <h1>profile user id: <%= @profile.user_id %></h1>
     <%= render 'form' %>
   <%end%>
 <%end%>
 <%= link_to 'Back', profiles_path %>
+  </div>

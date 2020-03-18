@@ -1,7 +1,10 @@
 <%= render 'layouts/navigation' %><%= yield %>
-<h1>
-  Welcome to Concerto!
-</h1>
-<%= button_to "Login", '/login', method: :get%>
-<%= button_to "Sign Up", '/users/new', method: :get%>
-<%= link_to 'Profiles', controller: 'profiles' %>
+<div class="jumbotron-fluid">
+  <div class="container">
+    <h1>Concerto</h1>
+     <p>Where musicians go to find collaborators</p>
+    <p>
+      Begin by creating a profile and then start searching!
+    </p>
+   </div>
+ </div>

@@ -1,3 +1,23 @@
-// Place all the styles related to the Welcome controller here.
+ .jumbotron-fluid {
+     background-image: asset-url('mic.jpg');
+     background-size: cover;
+     height: 800px;
+ }
+
+ .jumbotron-fluid h1 {
+    color: #fff;
+    text-align: center;
+    padding-top:30px;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+    font-weight: bold;
+ }
+
+ .jumbotron-fluid p {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+ }// Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/

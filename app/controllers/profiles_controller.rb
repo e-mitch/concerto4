@@ -26,7 +26,16 @@ class ProfilesController < ApplicationController
   
   def edit
     if logged_in?
-      @profile = Profile.find(params[:id])
+      current_profile = nil
+      profiles = Profile.all
+      x = 0
+      while x < profiles.length
+        if profiles[x].user_id == current_user.id
+          current_profile = profiles[x]
+        end
+        x += 1
+      end
+    @profile = current_profile
       if current_user.id != @profile.user_id
         redirect_to '/noaccess'
       end
