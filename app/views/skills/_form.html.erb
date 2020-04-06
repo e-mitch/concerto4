@@ -1,22 +1,22 @@
 <%= form_with model: @skill, local: true, :html => {:id => "skillForm"} do |f| %>
 
   <p><%= f.label :variety, "Variety"%></p>
-  <p><%= f.text_field :variety, id: :skill_variety, class: "form-control"%></p>
+  <p><%= f.text_field :variety, id: :skill_variety, class: "form-control", id: "varietyField"%></p>
   <div id="varietyError" class = "errormsg">
   </div>
 
   <p><%= f.label :genre, "Genre"%></p>
-  <p><%= f.text_field :genre, id: :skill_genre, class: "form-control"%></p>
+  <p><%= f.text_field :genre, id: :skill_genre, class: "form-control", id: "genreField"%></p>
   <div id="genreError" class = "errormsg">
   </div>
 
   <p><%= f.label :experience, "Experience"%></p>
-  <p><%= f.number_field :experience, id: :skill_experience, class: "form-control"%></p>
+  <p><%= f.number_field :experience, id: :skill_experience, class: "form-control", id: "experienceField"%></p>
   <div id="experienceError" class = "errormsg">
   </div>
 
   <p><%= f.label :details, "Details"%></p>
-  <p><%= f.text_area :details, id: :skill_details, class: "form-control"%></p>
+  <p><%= f.text_area :details, id: :skill_details, class: "form-control", id: "detailsField"%></p>
   <div id="detailsError" class = "errormsg">
   </div>
 

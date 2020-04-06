@@ -1,0 +1,40 @@
+#varietyField, #genreField{
+  width:300px;
+  margin:auto;
+  text-align:center;
+}
+
+#experienceField{
+  width:75px;
+  margin:auto;
+  text-align:center;
+}
+
+#detailsField{
+  width:700px;
+  height:200px;
+  margin:auto;
+  text-align:left;
+}
+
+@media only screen and (max-width:500px){
+  #varietyField, #genreField{
+    width: 96%;
+    margin-left:2%;
+    margin-right:2%;
+    text-align:center;
+  }
+  
+  #experienceField{
+    width:30%;
+    margin-left:30%;
+    margin-right:30%;
+  }
+  
+  #detailsField{
+    width:96%;
+    margin-left:2%;
+    margin-right:2%;
+    height: 300px;
+  }
+}

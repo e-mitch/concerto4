@@ -3,38 +3,38 @@
 <%= form_with model: @profile, local: true, :html => {:id => "profileForm"} do |f| %>
  
   <p><%= f.label :name, "Name"%></p>
-  <p><%= f.text_field :name, id: :user_name, class: "form-control"%></p>
+  <p><%= f.text_field :name, id: :user_name, class: "form-control", id: "nameField"%></p>
   <div id="nameError" class = "errormsg">
   </div>
     
   <p><%= f.label :email, "Email"%></p>
-  <p><%= f.text_field :email, id: :user_email, class: "form-control"%></p>
+  <p><%= f.text_field :email, id: :user_email, class: "form-control", id: "emailField"%></p>
   <div id="emailError" class = "errormsg">
  </div>
     
   <p><%= f.label :bio, "Bio"%></p>
-  <p><%= f.text_area :bio, id: :user_bio, class: "form-control"%></p>
+  <p><%= f.text_area :bio, id: :user_bio, class: "form-control", id: "bioField"%></p>
   <div id="bioError" class = "errormsg">
     </div>
   
   <p><%= f.label :interests, "Interests"%></p>
-  <p><%= f.text_area :interests, id: :user_interests, class: "form-control"%></p>
+  <p><%= f.text_area :interests, id: :user_interests, class: "form-control", id: "interestsField"%></p>
   <div id="interestsError" class = "errormsg">
    </div>
   
   <p>
     <%= f.label :soundcloud %><br>
-    <%= f.text_field :soundcloud, :size=> 50%>
+    <%= f.text_field :soundcloud, class: "form-control", id: "soundcloudField"%>
   </p>
 
    <p>
     <%= f.label :youtube %><br>
-    <%= f.text_field :youtube, :size=> 50%>
+    <%= f.text_field :youtube, class: "form-control", id: "youtubeField"%>
   </p>
 
   <p>
     <%= f.label :spotify %><br>
-    <%= f.text_field :spotify, :size=> 50%>
+    <%= f.text_field :spotify, class: "form-control", id: "spotifyField"%>
   </p>
 
   <p>

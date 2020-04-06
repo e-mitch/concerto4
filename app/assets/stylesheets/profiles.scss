@@ -72,3 +72,65 @@ h1{
   margin: 0 auto;
   display:block;
 }
+
+#nameField, #emailField{
+  width:350px;
+  text-align:center;
+  margin:auto;
+}
+
+
+#bioField{
+  width:800px;
+  text-align:left;
+  margin:auto;
+  height:300px;
+}
+
+#interestsField{
+  width:800px;
+  text-align:left;
+  margin:auto;
+  height:200px;
+}
+
+#soundcloudField, #youtubeField, #spotifyField{
+  width: 400px;
+  text-align:center;
+  margin:auto;
+}
+
+@media only screen and (max-width:500px){
+  #profileForm #nameField{
+    width:96%;
+    margin-left:2%;
+    margin-right:2%;
+  } 
+  
+  #profileForm #emailField{
+    width:96%;
+    margin-left:2%;
+    margin-right:2%;
+  }
+  
+  #profileForm #bioField{
+    width:96%;
+    margin-left:2%;
+    margin-right:2%;
+    height: 400px;
+  }
+  
+  #profileForm #interestsField{
+    width:96%;
+    margin-left:2%;
+    margin-right:2%;
+    height: 300px;
+  }
+  
+  #soundcloudField, #youtubeField, #spotifyField{
+    width:80%;
+    margin-left:10%;
+    margin-right:10%;
+  }
+}
+
