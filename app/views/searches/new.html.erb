@@ -1,0 +1,49 @@
+<%= render 'layouts/navigation'%>
+<div class="body">
+  
+
+<h1>
+  Search
+</h1>
+  
+  <%= form_with model: @skill, local: true do |form| %>
+  <p id = "varietySelect">
+    <%= form.label :variety %>
+    <%= form.select :variety, options_for_select(@skillsArray.sort) %>
+  </p>
+  <p id = "genreSelect">
+    <%= form.label :genre %>
+    <%= form.select :genre, options_for_select(@genresArray.sort) %>
+  </p>
+  
+  <p id = "experienceSelect">
+    <%= form.label :experience %>
+    <%= form.number_field :experience%>
+  </p>
+  <% end %>
+    <button id = "newSearch" class="btn btn-light">New Search</button>
+  <h1>
+  Search Results
+</h1>
+<table>
+  <tr>
+    <th>User</th>
+    <th>Variety</th>
+    <th>Genre</th>
+    <th>Experience</th>
+    <th></th>
+  </tr>
+  <% @skills.each do |skill| %>
+    <tr>
+      <td><%= skill.username%></td>
+      <td class = "varietyTD"><%= skill.variety %></td>
+      <td class = "genreTD"><%= skill.genre %></td>
+      <td class = "experienceTD"><%= skill.experience %></td>
+      <td><a href="/profiles/<%=skill.user_id%>">Profile</a></td>
+  </tr>
+  <% end %>
+</table>
+
+  
+  </div>
+<%= javascript_pack_tag 'filterResults', 'data-turbolinks-track': 'reload' %>

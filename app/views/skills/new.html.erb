@@ -1,0 +1,14 @@
+<%= render 'layouts/navigation'%>
+<div class="body">
+  
+
+<h1>New Skill</h1>
+  <p>
+    user ID: <%=current_user.id%>
+  </p>
+
+<%= render 'form', skill: @skill %>
+
+<%= link_to 'Back', skills_path %>
+ 
+</div>

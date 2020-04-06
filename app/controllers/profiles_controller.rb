@@ -5,24 +5,48 @@ class ProfilesController < ApplicationController
  
   def show
     @profile = Profile.find(params[:id])
+     @userSkills = []  
+    skills = Skill.all
+    x=0
+    while x < skills.length
+      if skills[x].user_id == current_user.id
+        @userSkills.push(skills[x])
+      end
+      x +=1
+    end
   end
  
   def new
     @profile = Profile.new
   end
+  
  
-  def view
+  def view    
     current_profile = nil
     profiles = Profile.all
     x = 0
-    while x < profiles.length
-      if profiles[x].user_id == current_user.id
-        current_profile = profiles[x]
+    if logged_in?
+      while x < profiles.length
+        if profiles[x].id == current_user.id
+          current_profile = profiles[x]
+        end
+        x += 1
       end
-      x += 1
+       @profile = current_profile
+     @userSkills = []  
+    skills = Skill.all
+    x=0
+    while x < skills.length
+      if skills[x].user_id == current_user.id
+        @userSkills.push(skills[x])
+      end
+      x +=1
     end
-    @profile = current_profile
+    else
+      redirect_to '/login'
+    end
   end
+  
   
   def edit
     if logged_in?
@@ -43,24 +67,12 @@ class ProfilesController < ApplicationController
       redirect_to :controller => 'sessions', :action => 'new'
     end
   end
- 
+  
   def create
-   ## @profile = Profile.new(profile_params)
- 
-    ## user = User.find(profile_params[:user_id])
-    ## @profile.build_user(:id  => user.id)   
-    
-   ## if @profile.save
-     ## redirect_to @profile
-   ## else
-     ### render 'new'
-   ## end
      @profile = Profile.new(profile_params)
-     @profile.user_id = current_user.id
- 
+     @profile.id = current_user.id
   if @profile.save
-    redirect_to @profile
-    current_user.save
+    redirect_to '/skills/new'
   else
     render 'new'
   end
@@ -89,6 +101,6 @@ class ProfilesController < ApplicationController
  
   private
     def profile_params
-      params.require(:profile).permit(:name, :email, :bio, :interests)
+      params.require(:profile).permit(:name, :email, :bio, :interests, :soundcloud, :youtube, :spotify)
     end
 end

@@ -1,7 +1,8 @@
 .body{
   background-color:#404040;
   display:block;
-  height:100vh;
+  min-height:100vh;
+  height:100%;
 }
 
 table{
@@ -14,4 +15,60 @@ table{
 
 h1{
   color:#fdff78;
+}
+
+.profile-nav{
+  color:#ffffff;
+}
+
+.socialLinks{
+  display:inline;
+  padding-left:10px;
+  padding-right:10px;
+}
+
+
+#socialLinksDiv{
+  width:100%;
+  text-align:center;
+}
+
+.profileSection{
+  white-space: pre-wrap;
+}
+
+.errormsg{
+  color:#ffffff;
+}
+
+.profileSection h2{
+  font-size:1.5em;
+  text-decoration:none;
+  font-weight:normal;
+  color: #feffcf;
+}
+
+.profileSection p{
+  margin-top:-50px;
+}
+
+.skillDiv{
+  display:inline;
+  width:46%;
+  margin-left:2%;
+  margin-right:2%;
+  float:left;
+}
+
+.skillDiv h2{
+  text-align:center;
+}
+
+.label{
+  font-size:1.2em;
+}
+
+#newSearch{
+  margin: 0 auto;
+  display:block;
 }

@@ -1,25 +1,64 @@
 <%= render 'layouts/navigation' %>
 <div class="body">
   <div id = "profile">
-<h1>
-  <%= @profile.name %>
+    <h1>
+      <%= @profile.name %>
+    </h1>
+   <div id="socialLinksDiv">
+  <% if @profile.soundcloud.length > 1 %>
+    <p class = "socialLinks">  
+        <strong><%= link_to "Soundcloud", @profile.soundcloud %></strong>
+    </p>
+  <%end%>
+
+  <% if @profile.spotify.length > 1%>
+    <p class = "socialLinks">  
+        <strong><%= link_to "Spotify", @profile.spotify %></strong>
+    </p>
+  <%end%>
+
+  <% if @profile.youtube.length > 1 %>
+   <p class = "socialLinks">  
+      <strong><%= link_to "Youtube", @profile.youtube %></strong>
+  </p>
+  <%end%>
+  </div>
+  <p>
+    <strong>email:</strong>
+    <%= @profile.email %>
+  </p>
+
+  <div class="profileSection">
+    <h2>bio:</h2>
+    <p>
+      <%= @profile.bio%>
+    </p>  
+  </div>
+
+  <div class="profileSection">
+    <h2>interests:</h2>
+    <p>
+     <%= @profile.interests %>
+    </p>
+  </div>
+    
+  <h1>
+    Skills
   </h1>
- 
-<p>
-  <strong>email:</strong>
-  <%= @profile.email %>
-</p>
 
-<p>
-  <strong>bio:</strong>
-  <%= @profile.bio %>
-</p>
+  </div>
+  <div class="body">
+   <% @userSkills.each do |element| %>
+    <div class="skillDiv">
+      
+       <h2><%=element.variety%></h2>
+       <p class = "skillDetails"><span class="label">Genre: </span><%= element.genre%> &nbsp &nbsp &nbsp &nbsp <span class="label">Experience:</span> <%=element.experience %> years</p>
+       <p class = "skillDetails"><span class="label">Details:</span> <%= element.details%></p><br>
 
-<p>
-  <strong>interests:</strong>
-  <%= @profile.interests %>
-</p>
+          </div>
+  <% end %>
 
+   
 <%= link_to 'All Profiles', profiles_path %>
   
       </div>

@@ -1,27 +1,68 @@
 <%= render 'layouts/navigation' %>
 <div class="body">
   <div id = "profile">
+    <p class="profile-nav" id="profileEdit">
+    <a href ='/myprofile/edit'>Edit</a></p>
 <h1>
   <%= @profile.name %>
   </h1>
+    
+     <div id="socialLinksDiv">
+<% if @profile.soundcloud.length > 1 %>
+  <p class = "socialLinks">  
+      <strong><%= link_to "Soundcloud", @profile.soundcloud %></strong>
+  </p>
+<%end%>
+  
+<% if @profile.spotify.length > 1%>
+  <p class = "socialLinks">  
+      <strong><%= link_to "Spotify", @profile.spotify %></strong>
+  </p>
+<%end%>
+   
+<% if @profile.youtube.length > 1 %>
+ <p class = "socialLinks">  
+    <strong><%= link_to "Youtube", @profile.youtube %></strong>
+</p>
+<%end%>
+</div>
  
 <p>
   <strong>email:</strong>
   <%= @profile.email %>
 </p>
 
-<p>
-  <strong>bio:</strong>
-  <%= @profile.bio %>
-</p>
+<div class="profileSection">
+  <h2>bio:</h2>
+  <p>
+    <%= @profile.bio%>
+  </p>  
+</div>
 
-<p>
-  <strong>interests:</strong>
-  <%= @profile.interests %>
-</p>
-
-<%= link_to 'All Profiles', profiles_path %>
-<a class ="nav-link navbar-dark" href ='/myprofile/edit'>Edit</a>
+<div class="profileSection">
+  <h2>interests:</h2>
+  <p>
+   <%= @profile.interests %>
+  </p>
+</div>
+   
+    <h1>
+      Skills
+    </h1>
+<% if @userSkills.length > 0 %>    
+ <% @userSkills.each do |element| %>
+     <h2><%=element.variety%></h2>
+     <li class = "skillDetails">Genre: <%= element.genre%></li>
+     <li class = "skillDetails">Experience: <%= element.experience%></li>
+     <li class = "skillDetails">Details: <%= element.details%></li><br>
+    <p class = "profile-nav">
+      <%= link_to 'Edit', edit_skill_path(element) %>
+    </p>
+<% end %>
+<%end%>
+<p class="profile-nav">
+  
+    <a href='/skills/new'>Add Skill</a></p><br>
   
       </div>
 </div>

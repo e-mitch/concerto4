@@ -1,0 +1,25 @@
+<%render 'layouts/navigation'%>
+  <div class="body" onload="getResults">
+<h1>
+  Search Results
+</h1>
+<table>
+  <tr>
+    <th>User</th>
+    <th>Variety</th>
+    <th>Genre</th>
+    <th>Experience</th>
+    <th></th>
+  </tr>
+ 
+  <% @skills.each do |skill| %>
+    <tr>
+      <td><%= skill.user_id%></td>
+      <td class = "varietyTD"><%= skill.variety %></td>
+      <td id = "genreTD"><%= skill.genre %></td>
+      <td id = "experienceTD"><%= skill.experience %></td>
+      <td><%= link_to 'Show', skill_path(skill) %></td>
+  <% end %>
+</table>
+</div>
+<%= javascript_pack_tag 'getResults', 'data-turbolinks-track': 'reload' %>

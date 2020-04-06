@@ -1,0 +1,31 @@
+<div class="body">
+  <%= render 'layouts/navigation'%>
+ <h1>
+    <%=@skill.variety %>
+  </h1>
+<p id="notice"><%= notice %></p>
+  <p>
+    <strong>User:</strong>
+    <%=@skill.username %>
+    <a href="/profiles/<%@skill.profileID%>">User</a>
+  </p>
+<p>
+  <strong>Variety:</strong>
+  <%= @skill.variety %>
+</p>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @skill.genre %>
+</p>
+
+<p>
+  <strong>Experience:</strong>
+  <%= @skill.experience %>
+</p>
+
+<p>
+  <strong>Details:</strong>
+  <%= @skill.details %>
+</p>
+  </div>  

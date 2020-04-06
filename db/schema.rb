@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_11_181333) do
+ActiveRecord::Schema.define(version: 2020_03_31_174350) do
 
   create_table "profiles", force: :cascade do |t|
     t.text "name"
@@ -20,7 +20,23 @@ ActiveRecord::Schema.define(version: 2020_03_11_181333) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+    t.string "soundcloud"
+    t.string "youtube"
+    t.string "spotify"
     t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.string "variety"
+    t.string "genre"
+    t.integer "experience"
+    t.text "details"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.string "username"
+    t.integer "profileID"
+    t.index ["user_id"], name: "index_skills_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -29,7 +45,9 @@ ActiveRecord::Schema.define(version: 2020_03_11_181333) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "ProfileID"
+    t.string "soundcloud"
   end
 
   add_foreign_key "profiles", "users"
+  add_foreign_key "skills", "users"
 end

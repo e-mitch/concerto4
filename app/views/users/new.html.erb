@@ -1,12 +1,21 @@
 <%= render 'layouts/navigation' %>
 <div class="body">
 <h1>Sign Up</h1>
-<%= form_for @user do |f|%>
-  <p><%= f.label :username%></p>
-  <p><%= f.text_field :username%></p>
-  <p><%= f.label :password%></p>
-  <p><%= f.password_field :password%></p>
+<%= form_for @user, :html => {:id => "userForm"} do |f|%>
+  <p><%= f.label :username, "Username"%></p>
+  <p><%= f.text_field :username, id: :user_username, class: "form-control"%></p>
+  <div id="usernameError" class = "errormsg">
+    
+  </div>
+  <p><%= f.label :password, "Password"%></p>
+  <p><%= f.password_field :password, id: :user_password, class: "form-control"%></p>
+  <div id="passwordError" class = "errormsg">
+    
+  </div>
 <br>
-  <%= f.submit %>
+  <%= f.submit data: {disable_with: false} %>
 <%end%>
   </div>
+
+<%= javascript_pack_tag 'validateAccount', 'data-turbolinks-track': 'reload' %>
+

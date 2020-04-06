@@ -1,39 +1,46 @@
-<%= form_with model: @profile, local: true do |form| %>
+<div class="body">
  
-  <% if @profile.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@profile.errors.count, "error") %> prohibited
-        this profile from being saved:
-      </h2>
-      <ul>
-        <% @profile.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
+<%= form_with model: @profile, local: true, :html => {:id => "profileForm"} do |f| %>
+ 
+  <p><%= f.label :name, "Name"%></p>
+  <p><%= f.text_field :name, id: :user_name, class: "form-control"%></p>
+  <div id="nameError" class = "errormsg">
+  </div>
+    
+  <p><%= f.label :email, "Email"%></p>
+  <p><%= f.text_field :email, id: :user_email, class: "form-control"%></p>
+  <div id="emailError" class = "errormsg">
+ </div>
+    
+  <p><%= f.label :bio, "Bio"%></p>
+  <p><%= f.text_area :bio, id: :user_bio, class: "form-control"%></p>
+  <div id="bioError" class = "errormsg">
     </div>
-  <% end %>
- 
- <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </p>
- 
+  
+  <p><%= f.label :interests, "Interests"%></p>
+  <p><%= f.text_area :interests, id: :user_interests, class: "form-control"%></p>
+  <div id="interestsError" class = "errormsg">
+   </div>
+  
   <p>
-    <%= form.label :email %><br>
-    <%= form.text_field :email %>
+    <%= f.label :soundcloud %><br>
+    <%= f.text_field :soundcloud, :size=> 50%>
+  </p>
+
+   <p>
+    <%= f.label :youtube %><br>
+    <%= f.text_field :youtube, :size=> 50%>
   </p>
 
   <p>
-    <%= form.label :bio %><br>
-    <%= form.text_area :bio %>
+    <%= f.label :spotify %><br>
+    <%= f.text_field :spotify, :size=> 50%>
   </p>
 
   <p>
-    <%= form.label :interests %><br>
-    <%= form.text_area :interests %>
-  </p>
-  <p>
-    <%= form.submit %>
+    <%= f.submit data: {disable_with: false} %>
   </p>
 <%end%>
+  </div>
+  
+  <%= javascript_pack_tag 'validateProfile', 'data-turbolinks-track': 'reload' %>
