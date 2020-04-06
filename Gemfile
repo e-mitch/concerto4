@@ -22,7 +22,9 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-group :production do gem 'pg' end
+group :production do 
+  gem 'pg' 
+end
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
