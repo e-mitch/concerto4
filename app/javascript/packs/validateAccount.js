@@ -1,5 +1,5 @@
-var usernameReadyToSubmit = true;
-var passwordReadyToSubmit = true;
+var usernameReadyToSubmit = false;
+var passwordReadyToSubmit = false;
 
 var allUsernames = [];
 
@@ -9,7 +9,7 @@ let usernameError = document.getElementById('usernameError');
 
 usernameInput.addEventListener("change", () => {
   usernameValue = usernameInput.value;
-  if (usernameValue.length < 5){
+  if (usernameValue.length < 5 && usernameValue.length > 25){
     usernameError.innerHTML = "Please enter a username longer than five characters";
     usernameReadyToSubmit = false;
   } else{
@@ -34,13 +34,14 @@ passwordInput.addEventListener("change", () => {
 
 
 form.addEventListener('submit',(event) =>{
-  if (usernameReadyToSubmit == false || usernameReadyToSubmit == false){
+  console.log("username: " + usernameReadyToSubmit + " password: " + passwordReadyToSubmit);
+  if (usernameReadyToSubmit == false || passwordReadyToSubmit == false){
     event.preventDefault();
   }
 });
 
 form.addEventListener('update',(event) =>{
-  if (usernameReadyToSubmit == false || usernameReadyToSubmit == false){
+  if (usernameReadyToSubmit == false || passwordReadyToSubmit == false){
     event.preventDefault();
   }
 });

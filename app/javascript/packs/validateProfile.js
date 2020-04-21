@@ -1,7 +1,7 @@
-var nameReadyToSubmit = true;
-var emailReadyToSubmit = true;
-var bioReadyToSubmit = true;
-var interestsReadyToSubmit = true;
+var nameReadyToSubmit = false;
+var emailReadyToSubmit = false;
+var bioReadyToSubmit = false;
+var interestsReadyToSubmit = false;
 
 let form = document.getElementById("profileForm");
 let nameInput = document.getElementsByClassName('form-control')[0];

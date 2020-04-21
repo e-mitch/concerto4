@@ -1,7 +1,7 @@
-var varietyReadyToSubmit = true;
-var genreReadyToSubmit = true;
-var experienceReadyToSubmit = true;
-var detailsReadyToSubmit = true;
+var varietyReadyToSubmit = false;
+var genreReadyToSubmit = false;
+var experienceReadyToSubmit = false;
+var detailsReadyToSubmit = false;
 
 let form = document.getElementById("skillForm");
 let varietyInput = document.getElementsByClassName('form-control')[0];
@@ -25,6 +25,7 @@ genreInput.addEventListener("change", () => {
   genreValue = genreInput.value;
   if (genreValue.length < 2 ){
     genreError.innerHTML = "Please enter a genre."
+    genreReadyToSubmit = false;
   }else{
     genreError.innerHTML = "";
     genreReadyToSubmit = true;
@@ -36,8 +37,9 @@ let experienceError = document.getElementById('experienceError');
 
 experienceInput.addEventListener("change", () => {
   experienceValue = experienceInput.value;
-  if (experienceValue.length < 2){
+  if (experienceValue.length < 1){
     experienceError.innerHTML = "Please enter an experience level."
+    experienceReadyToSubmit = false;
   }else{
     experienceError.innerHTML = "";
     experienceReadyToSubmit = true;
@@ -49,8 +51,9 @@ let detailsError = document.getElementById('detailsError');
 
 detailsInput.addEventListener("change", () => {
   detailsValue = detailsInput.value;
-  if (detailsValue.length < 2 ){
+  if (detailsValue.length < 15 ){
     detailsError.innerHTML = "Please enter a description of details."
+    detailsReadyToSubmit = false;
   }else{
     detailsError.innerHTML = "";
     detailsReadyToSubmit = true;
@@ -59,6 +62,7 @@ detailsInput.addEventListener("change", () => {
 
 
 form.addEventListener('submit',(event) =>{
+  console.log("Variety: " + varietyReadyToSubmit + " genre: " + genreReadyToSubmit + " experience: " + experienceReadyToSubmit + " Details: " + detailsReadyToSubmit);
   if (varietyReadyToSubmit == false || genreReadyToSubmit == false || experienceReadyToSubmit == false || detailsReadyToSubmit==false){
     event.preventDefault();
   }

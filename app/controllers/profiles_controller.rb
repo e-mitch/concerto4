@@ -92,7 +92,11 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
     @profile.destroy
  
-    redirect_to profiles_path
+     respond_to do |format|
+       format.html {redirect_to profiles_path}
+       format.json {head :no_content}
+       format.js {render :layout => false}
+     end
   end
   
   def access

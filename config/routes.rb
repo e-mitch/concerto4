@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'skill/index'
   get 'skill/new'
   get 'skill/edit'
   get 'skill/show'
@@ -10,7 +9,6 @@ Rails.application.routes.draw do
   get 'sessions/create'
   get 'sessions/login'
   get 'sessions/welcome'
-  get 'users/new'
   get 'users/create'
   get 'welcome/index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
@@ -29,4 +27,5 @@ Rails.application.routes.draw do
   get 'search', to: 'searches#new'
   post 'search', to: 'searches#searchResults'
   get 'profiles/:id', to: 'patients#show'
+  get 'signup', to: 'users#new'
 end
