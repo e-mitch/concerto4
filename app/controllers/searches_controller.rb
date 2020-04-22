@@ -1,5 +1,8 @@
 class SearchesController < ApplicationController
  def new
+   if logged_in? == false
+     redirect_to '/login'
+   end
    @skills = Skill.all
     @skillsArray = ["  "]
     skills = Skill.all
