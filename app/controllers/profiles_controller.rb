@@ -74,7 +74,9 @@ class ProfilesController < ApplicationController
   def create
      @profile = Profile.new(profile_params)
      @profile.id = current_user.id
+  if @profile.save
     redirect_to '/skills/new'
+  else
     render 'new'
   end
   end
