@@ -38,9 +38,10 @@
   color:#fdff78;
 }
 
-@media only screen and (max-width:800px){
+@media only screen and (max-width: 400px){
+  
   .jumbotron-fluid{
-     background-image: asset-url('mobileMic.jpg');
+     background-image: asset-url('micMobile.jpg');
      width:auto;
      min-height:100vh;
   }
@@ -50,12 +51,10 @@
     text-align: center;
     margin-bottom: 30px;
     font-weight: bold;
-    font-size:1.5em;
     line-height:1.5em;
  }
   
   .body a{
-  color:#feffcf;
-  font-size:1em;
-}
+    font-size:1em;
+  }
 }

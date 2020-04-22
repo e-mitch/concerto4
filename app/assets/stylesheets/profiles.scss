@@ -109,6 +109,10 @@ h2{
   margin-bottom:15px;
 }
 @media only screen and (max-width:500px){
+  
+  #experienceHeader{
+    display:none;
+  }
   #profileForm #nameField{
     width:96%;
     margin-left:2%;

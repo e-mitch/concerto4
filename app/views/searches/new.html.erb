@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <%= render 'layouts/navigation'%>
 <div class="body">
   
@@ -9,7 +10,7 @@
   <%= form_with model: @skill, local: true do |form| %>
   <p id = "varietySelect">
     <%= form.label :variety %>
-    <%= form.select :variety, options_for_select(@skillsArray.sort) %>
+    <%= form.select :variety, options_for_select(@skillsArray.sort), :class => 'btn btn-secondary dropdown-toggle' %>
   </p>
   <p id = "genreSelect">
     <%= form.label :genre %>
@@ -30,16 +31,15 @@
     <th>User</th>
     <th>Variety</th>
     <th>Genre</th>
-    <th>Experience</th>
+    <th id = "experienceHeader">Experience</th>
     <th></th>
   </tr>
   <% @skills.each do |skill| %>
     <tr>
-      <td><%= skill.username%></td>
+      <td><a href="/profiles/<%=skill.user_id%>"><%= skill.username%></a></td>
       <td class = "varietyTD"><%= skill.variety %></td>
       <td class = "genreTD"><%= skill.genre %></td>
       <td class = "experienceTD"><%= skill.experience %></td>
-      <td><a href="/profiles/<%=skill.user_id%>">Profile</a></td>
   </tr>
   <% end %>
 </table>

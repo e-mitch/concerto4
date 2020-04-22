@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <div class="body">
  
 <%= form_with model: @profile, local: true, :html => {:id => "profileForm"} do |f| %>
@@ -40,9 +41,11 @@
   </p>
 
   <p>
-    <%= f.submit data: {disable_with: false} %>
+    <%= f.submit data: {disable_with: false}, :class => 'btn btn-light' %>
   </p>
 <%end%>
+  <br>
+  <br>
   </div>
   
   <%= javascript_pack_tag 'validateProfile', 'data-turbolinks-track': 'reload' %>

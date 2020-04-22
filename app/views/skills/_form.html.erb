@@ -20,7 +20,9 @@
   <div id="detailsError" class = "errormsg">
   </div>
 
-    <%= f.submit data: {disable_with: false} %>
+    <%= f.submit data: {disable_with: false}, :class => 'btn btn-light' %>
+<br>
+<br>
 <% end %>
 
   <%= javascript_pack_tag 'validateSkill', 'data-turbolinks-track': 'reload' %>

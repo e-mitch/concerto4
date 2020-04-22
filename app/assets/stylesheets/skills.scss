@@ -17,6 +17,11 @@
   text-align:left;
 }
 
+.skillDetails{
+  color:#ffffff;
+}
+
+
 
 @media only screen and (max-width:500px){
   #varietyField, #genreField{
@@ -40,10 +45,14 @@
   }
   
   nav a{
-  font-size:1.5em;
+  font-size:1em;
 }
+  
+  .experienceTD{
+    display:none;
+  }
 
 .navbar-brand{
-  font-size:2em !important;
+  font-size:1.2em;
 }
 }
