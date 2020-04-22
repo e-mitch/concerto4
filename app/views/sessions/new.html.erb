@@ -2,11 +2,14 @@
 <%= render 'layouts/navigation' %>
 <div class="body">
 <h1>Login</h1>
+  <div id="loginDiv">
+   
    <p><%= form_tag '/login' do %></p>
    <p><%= label_tag :username%></p>
-   <p><%= text_field_tag :username %></p>
+   <p><%= text_field_tag :username,  "",class: 'form-control' %></p>
    <p><%= label_tag :password%></p>
-  <p> <%= password_field_tag :password%></p>
-   <p><%= submit_tag "Login", :class => 'btn btn-light' %>
+  <p> <%= password_field_tag :password, "",class: 'form-control' %></p>
+    <p><%= submit_tag "Login", :class => 'btn btn-light' %></p>
+  </div>
 <%end%>
   </div>

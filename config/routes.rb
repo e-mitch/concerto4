@@ -28,4 +28,5 @@ Rails.application.routes.draw do
   post 'search', to: 'searches#searchResults'
   get 'profiles/:id', to: 'patients#show'
   get 'signup', to: 'users#new'
+  get 'skills/new', to: 'skills#new'
 end

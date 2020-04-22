@@ -9,7 +9,7 @@ class ProfilesController < ApplicationController
     skills = Skill.all
     x=0
     while x < skills.length
-      if skills[x].user_id == current_user.id
+      if skills[x].user_id == @profile.id
         @userSkills.push(skills[x])
       end
       x +=1
@@ -31,9 +31,6 @@ class ProfilesController < ApplicationController
           current_profile = profiles[x]
         end
         x += 1
-      end
-      if current_profile == nil
-        redirect_to '/profiles/new'
       end
        @profile = current_profile
      @userSkills = []  
@@ -73,8 +70,8 @@ class ProfilesController < ApplicationController
   
   def create
      @profile = Profile.new(profile_params)
-     @profile.id = current_user.id
-  if @profile.save
+     @profile.id = current_user.id    
+    if @profile.save
     redirect_to '/skills/new'
   else
     render 'new'
