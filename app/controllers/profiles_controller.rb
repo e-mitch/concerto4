@@ -105,6 +105,6 @@ class ProfilesController < ApplicationController
  
   private
     def profile_params
-      params.require(:profile).permit(:name, :email, :bio, :interests, :soundcloud, :youtube, :spotify)
+      params.require(:profile).permit(:name, :email, :bio, :interests, :youtube, :spotify)
     end
 end
