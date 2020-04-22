@@ -72,10 +72,10 @@ class ProfilesController < ApplicationController
      @profile = Profile.new(profile_params)
      @profile.id = current_user.id    
     if @profile.save
-    redirect_to '/skills/new'
-  else
-    render 'new'
-  end
+      redirect_to '/skills/new'
+    else
+      redirect_to '/profiles/new'
+    end
   end
  
   def update

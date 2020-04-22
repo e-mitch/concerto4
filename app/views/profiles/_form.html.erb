@@ -2,6 +2,17 @@
 <div class="body">
  
 <%= form_with model: @profile, local: true, :html => {:id => "profileForm"} do |f| %>
+  <% if @profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+      <% @profile.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
  
   <p><%= f.label :name, "Name"%></p>
   <p><%= f.text_field :name, id: :user_name, class: "form-control", id: "nameField"%></p>
