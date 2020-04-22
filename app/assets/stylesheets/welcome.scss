@@ -1,5 +1,5 @@
  .jumbotron-fluid {
-     background-image: asset-url('mobileMic.jpg');
+     background-image: asset-url('mic.jpg');
      background-size: cover;
      height: 800px;
  }
@@ -18,7 +18,8 @@
     text-align: center;
     margin-bottom: 30px;
     font-weight: bold;
-   font-size:1.5em;
+    font-size:1em;
+    line-height:1em;
  }// Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
@@ -37,10 +38,24 @@
   color:#fdff78;
 }
 
-@media only screen and (max-width:500px){
+@media only screen and (max-width:800px){
   .jumbotron-fluid{
      background-image: asset-url('mobileMic.jpg');
-     background-size: cover;
-     height: 100vh;
+     width:auto;
+     min-height:100vh;
   }
+  
+  .jumbotron-fluid p {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size:1.5em;
+    line-height:1.5em;
+ }
+  
+  .body a{
+  color:#feffcf;
+  font-size:1em;
+}
 }
