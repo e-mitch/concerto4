@@ -32,6 +32,9 @@ class ProfilesController < ApplicationController
         end
         x += 1
       end
+      if current_profile == nil
+        redirect_to '/profiles/new'
+      end
        @profile = current_profile
      @userSkills = []  
     skills = Skill.all
