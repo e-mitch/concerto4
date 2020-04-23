@@ -57,13 +57,13 @@ class ProfilesController < ApplicationController
       profiles = Profile.all
       x = 0
       while x < profiles.length
-        if profiles[x].user_id == current_user.id
+        if profiles[x].id == current_user.id
           current_profile = profiles[x]
+          @profile = current_profile
         end
         x += 1
       end
-    @profile = current_profile
-      if current_user.id != @profile.user_id
+      if current_user.id != current_profile.id
         redirect_to '/noaccess'
       end
     else
@@ -85,7 +85,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
  
     if @profile.update(profile_params)
-      redirect_to @profile
+      redirect_to '/myprofile'
     else
       render 'edit'
     end

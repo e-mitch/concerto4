@@ -3,7 +3,8 @@
 <div class="body">
   <div id = "profile">
     <p class="profile-nav" id="profileEdit">
-    <a href ='/myprofile/edit'>Edit</a></p>
+      <%= link_to 'Edit', edit_profile_path(@profile) %>
+    <a href ='/profiles/<%=current_user.id%>/edit'>Edit</a></p>
 <h1>
   <%= @profile.name %>
   </h1>
