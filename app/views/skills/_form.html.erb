@@ -1,5 +1,7 @@
 <%= form_with model: @skill, local: true, :html => {:id => "skillForm"} do |f| %>
-
+  <p id="fillRequired", style="display:none">
+    Please fill all the fields.
+</p>
   <p><%= f.label :variety, "Variety"%></p>
   <p><%= f.text_field :variety, id: :skill_variety, class: "form-control", id: "varietyField"%></p>
   <div id="varietyError" class = "errormsg">
@@ -25,4 +27,3 @@
 <br>
 <% end %>
 
-  <%= javascript_pack_tag 'validateSkill', 'data-turbolinks-track': 'reload' %>

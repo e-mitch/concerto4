@@ -1,7 +1,7 @@
-var varietyReadyToSubmit = false;
-var genreReadyToSubmit = false;
-var experienceReadyToSubmit = false;
-var detailsReadyToSubmit = false;
+var varietyReadyToSubmit = true;
+var genreReadyToSubmit = true;
+var experienceReadyToSubmit = true;
+var detailsReadyToSubmit = true;
 
 let form = document.getElementById("skillForm");
 let varietyInput = document.getElementsByClassName('form-control')[0];
@@ -65,7 +65,6 @@ form.addEventListener('submit',(event) =>{
   console.log("Variety: " + varietyReadyToSubmit + " genre: " + genreReadyToSubmit + " experience: " + experienceReadyToSubmit + " Details: " + detailsReadyToSubmit);
   if (varietyReadyToSubmit == false || genreReadyToSubmit == false || experienceReadyToSubmit == false || detailsReadyToSubmit==false){
     event.preventDefault();
-    document.getElementById("fillRequired").style.display="inline"
   }
 });
 

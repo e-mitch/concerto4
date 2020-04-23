@@ -1,7 +1,7 @@
-var nameReadyToSubmit = false;
-var emailReadyToSubmit = false;
-var bioReadyToSubmit = false;
-var interestsReadyToSubmit = false;
+var nameReadyToSubmit = true;
+var emailReadyToSubmit = true;
+var bioReadyToSubmit = true;
+var interestsReadyToSubmit = true;
 
 let form = document.getElementById("profileForm");
 let nameInput = document.getElementsByClassName('form-control')[0];
@@ -65,12 +65,13 @@ interestsInput.addEventListener("change", () => {
 form.addEventListener('submit',(event) =>{
   if (nameReadyToSubmit == false || emailReadyToSubmit == false|| bioReadyToSubmit == false || interestsReadyToSubmit == false){
     event.preventDefault();
-    document.getElementById("fillRequired").style.display="inline";
+    console.log("prevented from submit")
   }
 });
 
 form.addEventListener('update',(event) =>{
   if (nameReadyToSubmit == false || emailReadyToSubmit == false|| bioReadyToSubmit == false || interestsReadyToSubmit == false){
     event.preventDefault();
+    console.log("prevented from update")
   }
 });
