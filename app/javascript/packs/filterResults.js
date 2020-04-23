@@ -21,6 +21,7 @@ function getVariety(){
     if (rows[i].getElementsByTagName("td")[1].innerText != varietySelection){
       rows[i].parentElement.removeChild(rows[i]);
       i -=1;
+      numRows -=1;
     } 
   }
 }
@@ -33,17 +34,22 @@ function getGenre(){
     if (rows[i].getElementsByTagName("td")[2].innerText != genreSelection){
       rows[i].parentElement.removeChild(rows[i]);
       i -=1;
+      numRows -=1;
     }
   }
 }
 
 function getExperience(){   
+  numRows = document.getElementsByTagName("tr").length;
   experienceSelection = document.getElementsByName("experience")[0].value;
-  console.log(experienceSelection);
+  var intSelection = parseInt(experienceSelection, 10);
   for(i = 1; i < numRows; i++){
-    if(rows[i].getElementsByTagName("td")[3].innerText < experienceSelection){
+    tdValue = rows[i].getElementsByTagName("td")[3].innerText;
+    intTD = parseInt(tdValue,10);
+    if(intTD < intSelection){
       rows[i].parentElement.removeChild(rows[i]);
       i -= 1;
+      numRows -= 1;
     }
   }
 }

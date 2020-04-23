@@ -1,7 +1,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <%= render 'layouts/navigation' %>
+
 <div class="body">
 <h1>Sign Up</h1>
+  
 <%= form_for @user, :html => {:id => "userForm"} do |f|%>
   <p><%= f.label :username, "Username"%></p>
   <p><%= f.text_field :username, id: :user_username, class: "form-control"%></p>

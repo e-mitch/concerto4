@@ -1,8 +1,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <div class="body">
+  
  
 <%= form_with model: @profile, local: true, :html => {:id => "profileForm"} do |f| %>
- 
   <p><%= f.label :name, "Name"%></p>
   <p><%= f.text_field :name, id: :user_name, class: "form-control", id: "nameField"%></p>
   <div id="nameError" class = "errormsg">
