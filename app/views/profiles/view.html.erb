@@ -27,7 +27,7 @@
 </p>
 <%end%>
 </div>
- 
+ <br>
 <p>
   <strong>email:</strong>
   <%= @profile.email %>
@@ -50,9 +50,12 @@
     <h1>
       Skills
     </h1>
+    <div class = "userSkillsDiv">
+      
+
 <% if @userSkills.length > 0 %>    
  <% @userSkills.each do |element| %>
-     <h2><%=element.variety%></h2>
+     <h2 class = "varietyH2"><%=element.variety%></h2>
      <li class = "skillDetails">Genre: <%= element.genre%></li>
      <li class = "skillDetails">Experience: <%= element.experience%></li>
      <li class = "skillDetails">Details: <%= element.details%></li><br>
@@ -64,6 +67,7 @@
               :remote => true, :class => 'delete_skill'%></p>
 <% end %>
 <%end%>
+          </div>
 <p class="profile-nav">
   
     <a href='/skills/new'>Add Skill</a></p><br>

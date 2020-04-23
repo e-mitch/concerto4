@@ -36,7 +36,7 @@
   </tr>
   <% @skills.each do |skill| %>
     <tr>
-      <td><a href="/profiles/<%=skill.user_id%>"><%= skill.username%></a></td>
+      <td><a href="/profiles/<%=skill.user_id%>", target="_blank"><%= skill.username%></a></td>
       <td class = "varietyTD"><%= skill.variety %></td>
       <td class = "genreTD"><%= skill.genre %></td>
       <td class = "experienceTD"><%= skill.experience %></td>

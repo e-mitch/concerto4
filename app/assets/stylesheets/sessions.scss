@@ -14,3 +14,27 @@
 p{
   line-height: 1.25em;
 }
+
+.userSkillsDiv{
+  width:60%;
+  margin-left:20%;
+  margin-right:20%;
+}
+
+.varietyH2{
+  text-align:center;
+}
+.profileSection p{
+  line-height:1.5em;
+}
+
+.body{
+  padding-bottom:15px;
+}
+@media only screen and (max-width:500px){
+  .userSkillsDiv{
+    width:86%;
+    margin-left:12%;
+    margin-right:12%;
+  }
+}
