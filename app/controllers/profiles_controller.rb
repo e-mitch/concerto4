@@ -32,7 +32,10 @@ class ProfilesController < ApplicationController
         end
         x += 1
       end
-       @profile = current_profile
+      if current_profile == nil
+        render '/profiles/new'
+      end
+     @profile = current_profile
      @userSkills = []  
     skills = Skill.all
     x=0
