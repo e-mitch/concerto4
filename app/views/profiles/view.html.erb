@@ -9,19 +9,19 @@
   </h1>
     
      <div id="socialLinksDiv">
-<% if @profile.soundcloud.length > 1 %>
+<% if @profile.soundcloud.length != 0 %>
   <p class = "socialLinks">  
       <strong><%= link_to "Soundcloud", @profile.soundcloud %></strong>
   </p>
 <%end%>
   
-<% if @profile.spotify.length > 1%>
+<% if @profile.spotify.length != 0%>
   <p class = "socialLinks">  
       <strong><%= link_to "Spotify", @profile.spotify %></strong>
   </p>
 <%end%>
    
-<% if @profile.youtube.length > 1 %>
+<% if @profile.youtube.length != 0 %>
  <p class = "socialLinks">  
     <strong><%= link_to "Youtube", @profile.youtube %></strong>
 </p>

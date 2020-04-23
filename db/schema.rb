@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_31_174350) do
+ActiveRecord::Schema.define(version: 2020_04_23_021039) do
 
   create_table "profiles", force: :cascade do |t|
     t.text "name"
@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(version: 2020_03_31_174350) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
-    t.string "soundcloud"
-    t.string "youtube"
     t.string "spotify"
+    t.string "youtube"
+    t.string "soundcloud"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 2020_03_31_174350) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "ProfileID"
-    t.string "soundcloud"
   end
 
   add_foreign_key "profiles", "users"
